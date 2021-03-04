@@ -16,7 +16,7 @@
 <% @books.each do |book| %>
   <span style="width:150px; display:inline-block;"><%= book.title %></span>
   <span style="width:150px; display:inline-block;"><%= book.author %></span>
-  <span style="width:150px; display:inline-block;"><%= book.price %></span>
+  <span style="width:150px; display:inline-block;"><%= book.genre %></span>
   <span style="width:150px; display:inline-block;"><%= number_to_currency(book.price) %></span>
   <span style="width:150px; display:inline-block;"><%= book.published_date.strftime("%m %d %Y") %></span>
   <%= link_to "Show", book %>

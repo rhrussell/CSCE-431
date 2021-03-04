@@ -1,0 +1,45 @@
+<%= form_with model: book do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% book.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :author %><br>
+    <%= form.text_field :author %>
+    <% book.errors.full_messages_for(:author).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :genre %><br>
+    <%= form.select :genre, [ 'Action & Adventure','Biography','Classic','Comic Book/Graphic Novel','Fantasy','Fiction','History','Horror','Mystery','Poetry','Romance','Science Fiction','Suspense/Thriller'], :prompt => 'Select One'%>
+    <% book.errors.full_messages_for(:genre).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :price %><br>
+    <%= form.number_field :price %>
+    <% book.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :published_date %><br>
+    <%= form.date_field :published_date %>
+    <% book.errors.full_messages_for(:published_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

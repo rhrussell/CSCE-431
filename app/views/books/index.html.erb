@@ -1,0 +1,27 @@
+<h1>Book Collection</h1>
+
+<%= link_to "New Book", new_book_path %>
+
+<br>
+<br>
+
+<span style="width:150px; display:inline-block; font-weight:bold; text-decoration:underline">Title</span>
+<span style="width:150px; display:inline-block; font-weight:bold; text-decoration:underline">Author</span>
+<span style="width:150px; display:inline-block; font-weight:bold; text-decoration:underline">Genre</span>
+<span style="width:150px; display:inline-block; font-weight:bold; text-decoration:underline">Price</span>
+<span style="width:150px; display:inline-block; font-weight:bold; text-decoration:underline">Published Date</span>
+
+<br>
+
+<% @books.each do |book| %>
+  <span style="width:150px; display:inline-block;"><%= book.title %></span>
+  <span style="width:150px; display:inline-block;"><%= book.author %></span>
+  <span style="width:150px; display:inline-block;"><%= book.price %></span>
+  <span style="width:150px; display:inline-block;"><%= number_to_currency(book.price) %></span>
+  <span style="width:150px; display:inline-block;"><%= book.published_date.strftime("%m %d %Y") %></span>
+  <%= link_to "Show", book %>
+  <%= link_to "Update", edit_book_path(book) %>
+  <%= link_to "Delete", delete_book_path(book) %> 
+<% end %>
+
+<br>
